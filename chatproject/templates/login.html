@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time Chat App - Login</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class='container'>
+        <div class='wrapper-app'>
+            <header class='navbar'>
+                <a href="/" class='logo'>Home</a>
+                <ul class='nav-list'>
+                    <li class='nav-item'>
+                        <a class='nav-item-link' href="/register">Register</a>
+                    </li>
+                </ul>
+            </header>
+            <section class="login">
+                <form class="login-form" method="POST">
+                    {% csrf_token %}
+                    <div class="login-form-wrapper">
+                        {{form.username}}
+                        {{form.password}}
+                        <button type="submit">Login</button>
+                    </div>
+                    <div class="btn-social-network">
+                        
+                            <a href="/accounts/google/login/?process=login" class="google">Login with Google</a>
+                        
+                        
+                            <!-- <a class="facebook">Login with Facebook</a> -->
+                        
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

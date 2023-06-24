@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time Chat App - Register</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class='container'>
+        <div class='wrapper-app'>
+            <header class='navbar'>
+                <a href="/" class='logo'>Home</a>
+                <ul class='nav-list'>
+                    <li class='nav-item'>
+                        <a class='nav-item-link' href="/login">Login</a>
+                    </li>
+                </ul>
+            </header>
+            <section class="register">
+                <form class="register-form" method="POST">
+                    {% csrf_token %}
+                    {{form.username}} <br>
+                    {{form.password1}} <br>
+                    {{form.password2}} <br>
+                    <button type="submit">Register</button>
+                </form>
+            </section>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

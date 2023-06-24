@@ -1,0 +1,402 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="{% static 'css/room.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="left-side__nav">
+                <div class="top-group">
+                    <div class="top-group__avatar">
+                        <img src="{% static 'images/user.jpg' %}" alt="User-Img" class="top-group__avatar-img">
+                    </div>
+                </div>
+                <div class="bottom-group">
+                    <div class="bottom-group__logout">
+                        <a class="bottom-group__logout-icon" href="{% url 'logout' %}">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="left-side__chat-list">
+                <div class="left-side__chat-list__header">
+                    <div class="search">
+                        <input id="room-name-input" type="text" placeholder="Search" />
+                        <input id="room-name-submit" type="button" value="Enter" />
+                    </div>
+                    <div class="add-group-chat">
+                        <a href="">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="left-side__chat-list__body">
+                    <div class="chat-item">
+                            <div class="chat-item__img">
+                                
+                                <a href="/room/chat/test">
+<img src="{% static 'images/img1.jpg' %}" alt="Friend" class="">
+                                </a>
+                            </div>
+                            <div class="chat-item__details">
+                                <div class="chat-item__details-header">
+                                    <h4>Nguyen Long</h4>
+                                    <p class="time">10:56</p>
+                                </div>
+                                <div class="chat-item__details-message">
+                                    <p>What's up?</p>
+                                </div>
+                            </div>
+                    </div>
+                    <!-- <div class="chat-item">
+                        <div class="chat-item__img">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" class="">
+                        </div>
+                        <div class="chat-item__details">
+                            <div class="chat-item__details-header">
+                                <h4>Nguyen Long</h4>
+                                <p class="time">10:56</p>
+                            </div>
+                            <div class="chat-item__details-message">
+                                <p>What's up?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <div class="chat-item__img">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" class="">
+                        </div>
+                        <div class="chat-item__details">
+                            <div class="chat-item__details-header">
+                                <h4>Nguyen Long</h4>
+                                <p class="time">10:56</p>
+                            </div>
+                            <div class="chat-item__details-message">
+                                <p>What's up?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <div class="chat-item__img">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" class="">
+                        </div>
+                        <div class="chat-item__details">
+                            <div class="chat-item__details-header">
+                                <h4>Nguyen Long</h4>
+                                <p class="time">10:56</p>
+                            </div>
+                            <div class="chat-item__details-message">
+                                <p>What's up?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <div class="chat-item__img">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" class="">
+                        </div>
+                        <div class="chat-item__details">
+                            <div class="chat-item__details-header">
+                                <h4>Nguyen Long</h4>
+                                <p class="time">10:56</p>
+                            </div>
+                            <div class="chat-item__details-message">
+                                <p>What's up?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <div class="chat-item__img">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" class="">
+                        </div>
+                        <div class="chat-item__details">
+                            <div class="chat-item__details-header">
+                                <h4>Nguyen Long</h4>
+                                <p class="time">10:56</p>
+                            </div>
+                            <div class="chat-item__details-message">
+                                <p>What's up?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <div class="chat-item__img">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" class="">
+                        </div>
+                        <div class="chat-item__details">
+                            <div class="chat-item__details-header">
+                                <h4>Nguyen Long</h4>
+                                <p class="time">10:56</p>
+                            </div>
+                            <div class="chat-item__details-message">
+                                <p>What's up?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <div class="chat-item__img">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" class="">
+                        </div>
+                        <div class="chat-item__details">
+                            <div class="chat-item__details-header">
+                                <h4>Nguyen Long</h4>
+                                <p class="time">10:56</p>
+                            </div>
+                            <div class="chat-item__details-message">
+                                <p>What's up?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <div class="chat-item__img">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" class="">
+                        </div>
+                        <div class="chat-item__details">
+                            <div class="chat-item__details-header">
+                                <h4>Nguyen Long</h4>
+                                <p class="time">10:56</p>
+                            </div>
+                            <div class="chat-item__details-message">
+                                <p>What's up?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-item">
+                        <div class="chat-item__img">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" class="">
+                        </div>
+                        <div class="chat-item__details">
+                            <div class="chat-item__details-header">
+                                <h4>Nguyen Long</h4>
+                                <p class="time">10:56</p>
+                            </div>
+                            <div class="chat-item__details-message">
+                                <p>What's up?</p>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="right-side__header">
+                <div class="right-side__header-user">
+                    <div class="user-image">
+                        <img src="{% static 'images/img1.jpg' %}" alt="Friend">
+                    </div>
+                    <!-- <h4>Nguyen Long <span>Online</span></h4> -->
+                    <h4>{{request.user.username}}<span>Online</span></h4>
+                </div>
+                <div class="right-side__header-nav">
+
+                </div>
+            </div>
+            <div class="right-side__body">
+                <div class="right-side__chat-log" id="chat-log">
+                    <!-- <div class="message message__sent">
+                        <div class="message__sent-content">
+                            <p>Hi!<small>10:56</small></p>
+                            <img src="{% static 'images/user.jpg' %}" alt="User" />
+                        </div>
+                    </div>
+                    <div class="message message__replies">
+                        <div class="message__replies-content">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" />
+                            <p>Hello <small>10:57</small></p>
+                        </div>
+                    </div>
+                    <div class="message message__sent">
+                        <div class="message__sent-content">
+                            <p>It is a long established fact that a reader will be distracted 
+                                by the readable content of a page when looking at its layout. 
+                                The point of using Lorem Ipsum is that it has a more-or-less 
+                                normal distribution of letters, as opposed to using 'Content 
+                                here, content here', making it look like readable English. 
+                                Many desktop publishing packages and web page editors now use 
+                                Lorem Ipsum as their default model text, and a search for 'lorem 
+                                ipsum' will uncover many web sites still in their infancy. 
+                                Various versions have evolved over the years, sometimes by 
+                                accident, sometimes on purpose (injected humour and the like).<small>10:56</small></p>
+                            <img src="{% static 'images/user.jpg' %}" alt="User" />
+                        </div>
+                    </div>
+                    <div class="message message__sent">
+                        <div class="message__sent-content">
+                            <p>It was popularised in the 1960s with the release of Letraset sheets 
+                                containing Lorem Ipsum passages, and more recently with desktop 
+                                publishing software like Aldus PageMaker including versions of 
+                                Lorem Ipsum.<small>10:56</small></p>
+                            <img src="{% static 'images/user.jpg' %}" alt="User" />
+                        </div>
+                    </div>
+                    <div class="message message__replies">
+                        <div class="message__replies-content">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" />
+                            <p>There are many variations of passages of Lorem Ipsum available, 
+                                but the majority have suffered alteration in some form, by injected 
+                                humour, or randomised words which don't look even slightly believable. 
+                                If you are going to use a passage of Lorem Ipsum, you need to be sure 
+                                there isn't anything embarrassing hidden in the middle of text. 
+                                All the Lorem Ipsum generators on the Internet tend to repeat 
+                                predefined chunks as necessary, making this the first true generator 
+                                on the Internet. It uses a dictionary of over 200 Latin words, 
+                                combined with a handful of model sentence structures, to generate 
+                                Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is 
+                                therefore always free from repetition, injected humour, or non-characteristic 
+                                words etc. <small>10:57</small></p>
+                        </div>
+                    </div>
+                    <div class="message message__sent">
+                        <div class="message__sent-content">
+                            <p>Hey, how can i help you?<small>10:56</small></p>
+                            <img src="{% static 'images/user.jpg' %}" alt="User" />
+                        </div>
+                    </div>
+                    <div class="message message__replies">
+                        <div class="message__replies-content">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" />
+                            <p>Lập trình mạng nhóm 14 <small>10:57</small></p>
+                        </div>
+                    </div>
+                    <div class="message message__sent">
+                        <div class="message__sent-content">
+                            <p>Ứng dụng web chat thời gian thực sử dụng django channels<small>10:56</small></p>
+                            <img src="{% static 'images/user.jpg' %}" alt="User" />
+                        </div>
+                    </div>
+                    <div class="message message__replies">
+                        <div class="message__replies-content">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" />
+                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
+                                It has roots in a piece of classical Latin literature from 45 BC, 
+                                making it over 2000 years old. <small>10:57</small></p>
+                        </div>
+                    </div>
+                    <div class="message message__sent">
+                        <div class="message__sent-content">
+                            <p>Have a good day!<small>10:56</small></p>
+                            <img src="{% static 'images/user.jpg' %}" alt="User" />
+                        </div>
+                    </div>
+                    <div class="message message__replies">
+                        <div class="message__replies-content">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" />
+                            <p>What are you doing, today? <small>10:57</small></p>
+                        </div>
+                    </div>
+                    <div class="message message__replies">
+                        <div class="message__replies-content">
+                            <img src="{% static 'images/img1.jpg' %}" alt="Friend" />
+                            <p>No <small>10:57</small></p>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="right-side__chat-input">
+                    <input id="chat-message-input" type="text" placeholder="Enter your message here...">
+                    <input id="chat-message-submit" type="button" value="Send">
+                        <!-- <ion-icon name="send-outline"></ion-icon> -->
+                    </input>
+                    {{ room_name|json_script:"room-name" }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="{% static 'js/reconnecting-websocket.js' %}"></script>
+    <script>
+        var roomName = {{ room_name_json }};
+        var username = {{ username }};
+
+        console.log(username);
+
+        const chatSocket = new ReconnectingWebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/chat/'
+            + roomName
+            + '/'
+        );
+
+        chatSocket.onopen = function(e) {
+            fetchMessages();
+        }
+
+        chatSocket.onmessage =  function(e) {
+            var data = JSON.parse(e.data);
+            if (data['command'] === 'messages') {
+                for (let i = 0; i < data['messages'].length; i++ ) {
+                    createMessage(data['messages'][i]);
+                }
+            } else if (data['command'] === 'new_message') {
+                createMessage(data['message']);
+            }
+        }
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        }
+
+        document.querySelector('#chat-message-input').focus();
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#chat-message-submit').click();
+            }
+        };
+
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'command': 'new_message',
+                'message': message,
+                'from': username
+            }));
+            messageInputDom.value = '';
+        };
+
+        function fetchMessages() {
+            chatSocket.send(JSON.stringify({'command': 'fetch_messages'}));
+        }
+
+        function createMessage(data) {
+            var author = data['author'];
+            var msgTag = document.createElement('div');
+            msgTag.classList.add('message');
+            var msgTagChild = document.createElement('div');
+            var pTag = document.createElement('p');
+            var smallTag =  document.createElement('small');
+            smallTag.textContent = data['timestamp']
+            pTag.textContent = data['content'];
+            pTag.appendChild(smallTag);
+            var imgTag = document.createElement('img');
+
+            if (author === username) {
+                imgTag.src = "{% static 'images/user.jpg' %}";
+                imgTag.alt = "User";
+                msgTagChild.classList.add('message__sent-content');
+                msgTag.classList.add('message__sent');
+                msgTag.appendChild(msgTagChild);
+                msgTagChild.appendChild(pTag);
+                msgTagChild.appendChild(imgTag);
+            } else {
+                imgTag.src = "{% static 'images/img1.jpg' %}";
+                imgTag.alt = "Friend";
+                msgTagChild.classList.add('message__replies-content');
+                msgTag.classList.add('message__replies');
+                msgTag.appendChild(msgTagChild);
+                msgTagChild.appendChild(imgTag);
+                msgTagChild.appendChild(pTag);
+            
+            }
+
+            document.querySelector('#chat-log').appendChild(msgTag);
+        }
+    </script>
+</body>
+</html>
